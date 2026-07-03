@@ -16,7 +16,7 @@ def add_numbers(a, b):
 # 2. Subtract Two Numbers
 # -------------------------------
 def subtract_numbers(a, b):
-    return b-a
+    return a-b
 
 
 # -------------------------------
@@ -38,6 +38,14 @@ def divide_numbers(a, b):
     return a/b
 
 # -------------------------------
+# 5. Find Modulus of
+# -----------------------------
+
+def remainder_of_numbers(a, b):
+    return a % b
+
+
+# -------------------------------
 # 5. Find Square of
 # -----------------------------
 def find_square(number):
@@ -53,12 +61,8 @@ def find_square(number):
 # 6. Find Cube of a Number
 # -------------------------------
 def find_cube(number):
-    # Task:
-    # Input: one number
-    # Process: Multiply the number three times
-    # Output: Return the cube value
-    # Example: 3 -> 27
-    pass
+    cube = number * number * number
+    return cube
 
 
 # -------------------------------
@@ -78,12 +82,10 @@ def check_even_odd(number):
 # 8. Find Bigger Number
 # -------------------------------
 def find_bigger_number(a, b):
-    # Task:
-    # Input: a and b are two numbers
-    # Process: Compare both numbers
-    # Output: Return the bigger number
-    # Example: 10 and 20 -> 20
-    pass
+    if a>b:
+        return a
+    else:
+        return b
 
 
 # -------------------------------
@@ -137,6 +139,7 @@ task = st.selectbox(
         "2. Subtract Two Numbers",
         "3. Multiply Two Numbers",
         "4. Divide Two Numbers",
+        "5. Modulus of two numbers",
         "5. Find Square",
         "6. Find Cube",
         "7. Check Even or Odd",
@@ -207,8 +210,22 @@ elif task == "4. Divide Two Numbers":
 # -------------------------------
 # Task 5 UI
 # -------------------------------
-elif task == "5. Find Square":
-    st.subheader("Task 5: Find Square")
+elif task == "5. Modulus of two numbers":
+    st.subheader("Task 6: Find modulus")
+    a = st.number_input('Enter first number', 
+    key = "div_a")
+    b = st.number_input('Enter second number', 
+        key = "div_b")
+
+    if st.button('Run Task'):
+        result = remainder_of_numbers(a, b)
+        st.write("Output:", result)
+
+# -------------------------------
+# Task 5 UI
+# -------------------------------
+elif task == "6. Find Square":
+    st.subheader("Task 6: Find Square")
 
     number = st.number_input("Enter a number", key="square_number")
 
@@ -220,8 +237,8 @@ elif task == "5. Find Square":
 # -------------------------------
 # Task 6 UI
 # -------------------------------
-elif task == "6. Find Cube":
-    st.subheader("Task 6: Find Cube")
+elif task == "7. Find Cube":
+    st.subheader("Task 7: Find Cube")
 
     number = st.number_input("Enter a number", key="cube_number")
 
@@ -233,8 +250,8 @@ elif task == "6. Find Cube":
 # -------------------------------
 # Task 7 UI
 # -------------------------------
-elif task == "7. Check Even or Odd":
-    st.subheader("Task 7: Check Even or Odd")
+elif task == "8. Check Even or Odd":
+    st.subheader("Task 8: Check Even or Odd")
 
     number = st.number_input("Enter a number", step=1, key="even_odd_number")
 
@@ -246,8 +263,8 @@ elif task == "7. Check Even or Odd":
 # -------------------------------
 # Task 8 UI
 # -------------------------------
-elif task == "8. Find Bigger Number":
-    st.subheader("Task 8: Find Bigger Number")
+elif task == "9. Find Bigger Number":
+    st.subheader("Task 9: Find Bigger Number")
 
     a = st.number_input("Enter first number", key="big_a")
     b = st.number_input("Enter second number", key="big_b")
@@ -260,8 +277,8 @@ elif task == "8. Find Bigger Number":
 # -------------------------------
 # Task 9 UI
 # -------------------------------
-elif task == "9. Celsius to Fahrenheit":
-    st.subheader("Task 9: Celsius to Fahrenheit")
+elif task == "10. Celsius to Fahrenheit":
+    st.subheader("Task 10: Celsius to Fahrenheit")
 
     celsius = st.number_input("Enter Celsius value", key="celsius")
 
@@ -273,8 +290,8 @@ elif task == "9. Celsius to Fahrenheit":
 # -------------------------------
 # Task 10 UI
 # -------------------------------
-elif task == "10. Simple Interest":
-    st.subheader("Task 10: Calculate Simple Interest")
+elif task == "11. Simple Interest":
+    st.subheader("Task 11: Calculate Simple Interest")
 
     principal = st.number_input("Enter principal amount", key="principal")
     rate = st.number_input("Enter rate of interest", key="rate")
@@ -288,8 +305,8 @@ elif task == "10. Simple Interest":
 # -------------------------------
 # Task 11 UI
 # -------------------------------
-elif task == "11. Calculate Age":
-    st.subheader("Task 11: Calculate Age")
+elif task == "12. Calculate Age":
+    st.subheader("Task 12: Calculate Age")
 
     birth_year = st.number_input("Enter birth year", step=1, key="birth_year")
     current_year = st.number_input("Enter current year", step=1, key="current_year")
@@ -302,8 +319,8 @@ elif task == "11. Calculate Age":
 # -------------------------------
 # Task 12 UI
 # -------------------------------
-elif task == "12. Greeting Message":
-    st.subheader("Task 12: Greeting Message")
+elif task == "13. Greeting Message":
+    st.subheader("Task 13: Greeting Message")
 
     name = st.text_input("Enter your name")
 

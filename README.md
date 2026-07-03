@@ -96,7 +96,7 @@ Now you are inside the project folder.
 Create a Python virtual environment:
 
 ```bash
-python -m venv venv
+python3 -m pip
 ```
 
 Activate the virtual environment.
